@@ -5,16 +5,15 @@ const userApi = require("./routes/user");
 const CatApi = require("./routes/categories");
 const PodcastApi = require("./routes/podcast");
 const cors = require("cors");
-
+const conn  = require("./conn/conn");
 
 require("dotenv").config();
 require("./conn/conn");
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: "https://teal-hummingbird-da6bd9.netlify.app/",
     credentials: true,
   }));
-
 
 
   
