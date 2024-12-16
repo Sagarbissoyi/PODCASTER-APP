@@ -9,35 +9,26 @@ const conn  = require("./conn/conn");
 
 require("dotenv").config();
 require("./conn/conn");
+
 app.use(
   cors({
-    origin: "https://teal-hummingbird-da6bd9.netlify.app/",
+    origin: "https://teal-hummingbird-da6bd9.netlify.app", // No trailing slash
     credentials: true,
-  }));
+  })
+);
 
-
-  
 app.use(express.json());
 app.use(cookieParser());
-app.use("/uploads",express.static("uploads"));
+app.use("/uploads", express.static("uploads"));
 
-//all routes
-app.use("/api/v1",userApi);
-app.use("/api/v1",CatApi);
-app.use("/api/v1",PodcastApi );
+// All routes
+app.use("/api/v1", userApi);
+app.use("/api/v1", CatApi);
+app.use("/api/v1", PodcastApi);
 
 app.listen(process.env.PORT, () => {
-  console.log(`Sever started on port : ${process.env.PORT}`);
+  console.log(`Server started on port : ${process.env.PORT}`);
 });
-
-
-
-//npm create vite@latest frontend
-
-
-
-
-
 
 
 
